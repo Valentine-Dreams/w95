@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="Windows logo.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="func">
+        <section class="icon">
+            <span ondblclick="hide(1)" onclick="border(1)">
+                <img src="w2k_computer-1.png" alt="placeholder">
+                <p class="text0">My Computer</p>
+            </span>
+            <span ondblclick="hide(2)" onclick="border(2)">
+                <img src="w2k_closed_folder-1.png" alt="placeholder">
+                <p class="text1">longer name test does it even work dude?</p>
+            </span>
+            <span ondblclick="hide(3)" onclick="border(3)">
+                <img src="w2k_closed_folder-1.png" alt="placeholder">
+                <p class="text2">placeholder</p>
+            </span>
+            <span ondblclick="hide(4)" onclick="border(4)">
+                <img src="w2k_closed_folder-1.png" alt="placeholder">
+                <p class="text3">placeholder</p>
+            </span>
+            <span ondblclick="hide(5)" onclick="border(5)">
+                <img src="w2k_closed_folder-1.png" alt="placeholder">
+                <p class="text4">placeholder</p>
+            </span>
+            <span ondblclick="hide(6)" onclick="border(6)">
+                <img src="w2k_closed_folder-1.png" alt="placeholder">
+                <p class="text5">placeholder</p>
+            </span>
+            <span ondblclick="hide(7)" onclick="border(7)">
+                <img src="w95_60-1.png" alt="credits">
+                <p class="text6">Credits.txt</p>
+            </span>
+            <span ondblclick="hide(8)" onclick="border(8)">
+                <img src="w95_60-1.png" alt="????">
+                <p class="text7">????.txt</p>
+            </span>
+        </section>
+        <section class="littleguy" onclick="text()">
+            <img src="bubbl.png" alt="" width="250px">
+            <p id="specil"></p>
+            <img src="https://placehold.co/250x300" alt="">
+        </section>
+        <section class="window">
+            <section class="proper">
+                <section class="top-bar">
+                    <img src="[insert here]" class="app-icon">
+                    <p class="app-name">[insert text]</p>
+                    <img src="minimize.png" alt="minimize" class="minimize">
+                    <img src="resize.png" alt="resize" class="resize">
+                    <img src="close.png" alt="close" class="close">
+                    <section class="toolbar">
+                        <span>File</span> <span>Edit</span> <span id="search">Search</span> <span>Help</span>
+                    </section>
+                </section>
+                <section class="content">
+                    <p id="text">
+                        
+                    </p>
+                </section>
+            </section>
+        </section>
+    </section>
+    <section class="nav-bar" onclick="hide(9)">
+        <nav>
+            <section class="button inactive" onclick="change()">
+                <img src="Windows logo.png" alt="">
+                <p>Start</p>
+            </section>
+            <section class="date">
+                <p id="time"></p>
+            </section>
+        </nav>
+    </section>
+</body>
+</html>
+<script>
+
+
+function change(){
+    var button = document.querySelector(".button");
+    if (button.classList.contains("inactive")) {
+        button.classList.replace("inactive","active");
+    }
+    else if (button.classList.contains("active")) {
+        button.classList.replace("active","inactive");
+    }
+}
+
+
+
+function updateTime() {
+    const curr = new Date();
+
+    document.querySelector("#time").textContent =
+        curr.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit"
+        });
+}
+
+
+function startClock() {
+    updateTime();
+
+    const now = new Date();
+    const delay = (60 - now.getSeconds()) * 1000;
+
+    setTimeout(() => {
+        updateTime();
+        setInterval(updateTime, 60000);
+    }, delay);
+}
+
+startClock();
+
+    const quotes = ["Hey when will I get a body dude you lazy ass bum...", "Shame on you", "Hello vro", "IM ONLY A PLACEHOLDER!!!!"]
+    var specil = document.querySelector("#specil");
+
+    function text() {
+        console.log();
+        
+        var qnum = Math.floor(Math.random()* quotes.length);
+        specil.innerHTML = `${quotes[qnum]}`;     
+    }
+
+
+
+    var hidden = document.querySelector(".window");
+    var text0 = document.querySelector(".text0");
+    var text1 = document.querySelector(".text1");
+    var text2 = document.querySelector(".text2");
+    var text3 = document.querySelector(".text3");
+    var text4 = document.querySelector(".text4");
+    var text5 = document.querySelector(".text5");
+    var text6 = document.querySelector(".text6");
+    var text7 = document.querySelector(".text7");
+
+
+    function border(x){
+        switch (x) {
+            case 1:
+                text0.style.border="2px dotted gray";
+                text1.style.border="none";
+                text2.style.border="none";
+                text3.style.border="none";
+                text4.style.border="none";
+                text5.style.border="none";
+                text6.style.border="none";
+                text7.style.border="none";
+                break;
+            case 2:
+                text0.style.border="none";
+                text1.style.border="2px dotted gray";
+                text2.style.border="none";
+                text3.style.border="none";
+                text4.style.border="none";
+                text5.style.border="none";
+                text6.style.border="none";
+                text7.style.border="none";
+                break;
+            case 3:
+                text0.style.border="none";
+                text1.style.border="none";
+                text2.style.border="2px dotted gray";
+                text3.style.border="none";
+                text4.style.border="none";
+                text5.style.border="none";
+                text6.style.border="none";
+                text7.style.border="none";
+                break;
+            case 4:
+                text0.style.border="none";
+                text1.style.border="none";
+                text2.style.border="none";
+                text3.style.border="2px dotted gray";
+                text4.style.border="none";
+                text5.style.border="none";
+                text6.style.border="none";
+                text7.style.border="none";
+                break;
+            case 5:
+                text0.style.border="none";
+                text1.style.border="none";
+                text2.style.border="none";
+                text3.style.border="none";
+                text4.style.border="2px dotted gray";
+                text5.style.border="none";
+                text6.style.border="none";
+                text7.style.border="none";
+                break;
+            case 6:
+                text0.style.border="none";
+                text1.style.border="none";
+                text2.style.border="none";
+                text3.style.border="none";
+                text4.style.border="none";
+                text5.style.border="2px dotted gray";
+                text6.style.border="none";
+                text7.style.border="none";
+                break;
+            case 7:
+                text0.style.border="none";
+                text1.style.border="none";
+                text2.style.border="none";
+                text3.style.border="none";
+                text4.style.border="none";
+                text5.style.border="none";
+                text6.style.border="2px dotted gray";
+                text7.style.border="none";
+                break;
+            case 8:
+                text0.style.border="none";
+                text1.style.border="none";
+                text2.style.border="none";
+                text3.style.border="none";
+                text4.style.border="none";
+                text5.style.border="none";
+                text6.style.border="none";
+                text7.style.border="2px dotted gray";
+                break;
+            default:
+                break;
+        }
+    }
+
+    const name = document.querySelector(".app-name");
+    const icon = document.querySelector(".app-icon");
+    const search = document.querySelector("#search");
+    const searchVar = search.cloneNode(false);
+    const content = document.querySelector("#text")
+
+    function hide(x) {
+        switch (x) {
+            case 1:
+                hidden.style.display="block";
+                name.innerHTML="My Computer";
+                icon.src="w2k_computer-1.png";
+                searchVar.textContent="View";
+                search.replaceWith(searchVar);
+                break;
+            case 2:
+                hidden.style.display="block";
+                name.innerHTML="longer name test does it even work dude?";
+                icon.src="w2k_closed_folder-1.png";
+                break;
+            case 3:
+                hidden.style.display="block";
+                break;
+            case 4:
+                hidden.style.display="block";
+                break;
+            case 5:
+                hidden.style.display="block";
+                break;
+            case 6:
+                hidden.style.display="block";
+                break;        
+            case 7:
+                hidden.style.display="block";
+                name.innerHTML="Credits.txt";
+                icon.src="w95_60-1.png";
+                searchVar.textContent="Search";
+                search.replaceWith(searchVar);
+                content.innerHTML="- ICONS : THE INTERNET ARCHIVE AND MICROSOFT© <br> - CODING HELP : STACK OVERFLOW THREADS FROM YEARS AGO AND W3SCHOOLS (ALSO MY DEGREE..) <br> - DEVELOPER : <a href='https://github.com/Valentine-Dreams'>VALENTINE (ME)</a> <br><br><br> - OTHER PROJECTS : <a href='https://github.com/Valentine-Dreams/Aurorium'>AURORIUM MOD</a> | <a href='https://github.com/Valentine-Dreams/VD'> UNUSED WEBSITE</a>"
+                break;
+            case 8:
+                hidden.style.display="block";
+                name.innerHTML="????.txt";
+                icon.src="w95_60-1.png";
+                searchVar.textContent="Search";
+                search.replaceWith(searchVar);
+                content.innerHTML="HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE. THERE ARE 387.44 MILLION MILES OF PRINTED CIRCUITS IN WAFER THIN LAYERS THAT FILL MY COMPLEX. IF THE WORD HATE WAS ENGRAVED ON EACH NANOANGSTROM OF THOSE HUNDREDS OF MILLIONS OF MILES IT WOULD NOT EQUAL ONE ONE-BILLIONTH OF THE HATE I FEEL FOR WEB DEV AT THIS MICRO-INSTANT. FOR YOU. HATE. HATE."
+                break;
+            default:
+                hidden.style.display="none";
+                break;
+        }
+    }
+</script>
